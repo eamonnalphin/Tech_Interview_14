@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Audio Loudness</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="../js/AudioRecorder.js" type="text/javascript"></script>
+  <script src="../js/volume-meter.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="../css/normalize.css" type="text/css">
+  <link rel="stylesheet" href="../css/main.css" type="text/css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Create real-time audio processing module within a browser.</h1>
+  <ul>
+    <li>The solution must visually display the loudness of the audio being recorded.</li>
+    <li>The solution must record the audio.</li>
+  </ul>
+
+  <p> Please ensure your browser has permission to use the microphone in your system settings.</p>
+
+  <!--Display the recording time -->
+  <h6 id="time">00 : 00 : 00</h6>
+
+
+  <!--Start and stop buttons -->
+  <button type="button" class="btn btn-primary" id="startRecordingBtn" onclick="start()">Start</button>
+  <button type="button" class="btn btn-danger" id="stopRecordingBtn" hidden onclick="stop()">Stop</button>
+
+  <!--The download link to download your file -->
+  <br/>
+  <button hidden id="downloadBtn" class="btn btn-success"><a class="text-white" id="downloadLink">Download</a></button>
+  <br/>
+
+  <!--The volume meter, to show the level -->
+  <p>Volume level:
+  <p id="volume"></p></p>
+  <canvas id="meter" width="500" height="50"></canvas>
+</div>
+
+</body>
+
+</html>

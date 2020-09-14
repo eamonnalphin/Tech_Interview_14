@@ -1,0 +1,34 @@
+/**
+The CSS Related to the Star Ratings.
+Original Author: Chris Coyier
+Source: https://css-tricks.com/star-ratings/
+ */
+
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.rating > span:active:before,
+.rating > span:active ~ span:before {
+  content: "\2605"; /** a filled star, \2606 is a hollow star **/
+  position: absolute;
+  color: black;
+}
+
+/**
+Colors the stars gray when hovering.
+Author: Eamonn Alphin
+ */
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  color: gray;
+}
